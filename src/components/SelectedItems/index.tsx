@@ -1,6 +1,11 @@
+import Button from '../Button';
 import SelectedItem from '../SelectedItem';
 
-const SelectedItems = () => {
+type SelectedItemsProps = {
+  onEdit: () => void;
+};
+
+const SelectedItems = ({ onEdit }: SelectedItemsProps) => {
   return (
     <div className="selected-items">
       <p>You currently have 2 selected items</p>
@@ -9,7 +14,7 @@ const SelectedItems = () => {
         <SelectedItem key={i} />
       ))}
 
-      <button className="button">Change my choice</button>
+      <Button onClick={onEdit}>Change my choice</Button>
     </div>
   );
 };

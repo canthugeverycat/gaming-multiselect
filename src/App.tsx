@@ -1,16 +1,35 @@
 import MultiSelect from './components/MultiSelect';
 import SelectedItems from './components/SelectedItems';
 
+import './App.scss';
+
+import { useState } from 'react';
+
+import Logo from './components/Logo';
+
 /**
  * Main skeleton of the app
  */
 const App = () => {
-  return (
-    <div className="container">
-      <SelectedItems />
+  const [isEditing, setIsEditing] = useState(false);
 
-      <MultiSelect />
-    </div>
+  const handleCancel = () => setIsEditing(false);
+
+  const handleSave = () => setIsEditing(false);
+
+  const handleEdit = () => setIsEditing(true);
+
+  return (
+    <>
+      <Logo />
+      <div className="container">
+        {isEditing ? (
+          <MultiSelect onSave={handleSave} onCancel={handleCancel} />
+        ) : (
+          <SelectedItems onEdit={handleEdit} />
+        )}
+      </div>
+    </>
   );
 };
 

@@ -1,8 +1,14 @@
+import Button from '../Button';
 import Filters from '../Filters';
 import List from '../List';
 import SelectedItem from '../SelectedItem';
 
-const MultiSelect = () => {
+type MultiSelectProps = {
+  onSave: () => void;
+  onCancel: () => void;
+};
+
+const MultiSelect = ({ onSave, onCancel }: MultiSelectProps) => {
   return (
     <div className="multiselect">
       <Filters />
@@ -13,8 +19,10 @@ const MultiSelect = () => {
         <SelectedItem key={i} />
       ))}
 
-      <button className="button">Save</button>
-      <button className="button">Cancel</button>
+      <Button onClick={onSave}>Save</Button>
+      <Button type="secondary" onClick={onCancel}>
+        Cancel
+      </Button>
     </div>
   );
 };

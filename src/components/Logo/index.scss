@@ -1,0 +1,52 @@
+@import '../../styles/globals.scss';
+
+.logo {
+  position: absolute;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%) scale(1);
+
+  transition: all 0.1s linear;
+
+  img {
+    -webkit-mask-image: url('../../assets/logo.svg');
+    mask-image: url('../../assets/logo.svg');
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    width: 140px;
+    height: 140px;
+  }
+
+  &:before {
+    display: inline-block;
+    position: absolute;
+
+    transition: all 0.1s linear;
+
+    outline: 10px solid $jet-black;
+    box-shadow: $box-shadow-orange-glow;
+    border-radius: 50%;
+
+    width: 140px;
+    height: 140px;
+
+    content: '';
+  }
+
+  &:hover {
+    transform: translateX(-50%) scale(1.02);
+
+    &:before {
+      box-shadow: $box-shadow-orange-glow--large;
+    }
+  }
+
+  &:active {
+    transform: translateX(-50%) scale(1);
+  }
+}

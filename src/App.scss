@@ -1,0 +1,10 @@
+@import './styles/globals.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  box-shadow: $box-shadow-default;
+  border-radius: $border-radius-default;
+  background: $white;
+  text-align: center;
+}

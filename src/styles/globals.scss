@@ -1,0 +1,39 @@
+// Colors
+$black: rgb(20, 20, 20);
+$jet-black: black;
+$dark-teal: #10191f;
+$white: #fff;
+$purple: #9e72c3;
+$baby-pink: #f6d3e0;
+$baby-blue: #c8e7f6;
+$grey: #6e6e6e;
+$light-grey: #b4b4b4;
+$gold: #ffcf40;
+$orange: #f60;
+$dark-orange: #833c14;
+$red: rgb(177, 36, 36);
+$beige: #e9e2bf;
+
+// Borders
+$border-radius-default: 4px;
+$border-radius-large: 8px;
+
+$border-default: 1px solid $light-grey;
+$border-darker: 1px solid $grey;
+
+// Shadows
+$box-shadow-default: 2px 2px 4px rgba(0, 0, 0, 0.3);
+$box-shadow-orange-glow:
+  0 0 15px 7.5px $white,
+  0 0 25px 15px $orange,
+  0 0 35px 22.5px $gold;
+$box-shadow-orange-glow--large:
+  0 0 30px 15px $white,
+  0 0 50px 30px $orange,
+  0 0 70px 45px $gold;
+
+// Functions
+$gutter-base: 4px;
+@function gutter($n: 1) {
+  @return $n * $gutter-base;
+}

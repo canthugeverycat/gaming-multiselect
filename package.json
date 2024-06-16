@@ -1,5 +1,5 @@
 {
-  "name": "dejan-skorupan-ll-technical-task",
+  "name": "dejan-skorupan-wg-technical-task",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -48,6 +48,8 @@
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.2.1",
-    "prettier": "^3.3.0"
+    "postcss": "^8.4.38",
+    "prettier": "^3.3.0",
+    "prettier-plugin-css-order": "^2.1.2"
   }
 }
