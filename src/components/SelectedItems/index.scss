@@ -1,0 +1,16 @@
+@import '../../styles/globals.scss';
+
+.selected-items {
+  &-title {
+    @include typography(14px, $text-color, 600, 24px);
+  }
+
+  &-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: gutter(2);
+
+    margin-bottom: gutter(2);
+  }
+}

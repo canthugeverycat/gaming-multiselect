@@ -6,6 +6,7 @@ import './App.scss';
 import { useState } from 'react';
 
 import Logo from './components/Logo';
+import Separator from './components/Separator';
 
 /**
  * Main skeleton of the app
@@ -20,16 +21,19 @@ const App = () => {
   const handleEdit = () => setIsEditing(true);
 
   return (
-    <>
+    <div className="container">
       <Logo />
-      <div className="container">
-        {isEditing ? (
-          <MultiSelect onSave={handleSave} onCancel={handleCancel} />
-        ) : (
-          <SelectedItems onEdit={handleEdit} />
-        )}
-      </div>
-    </>
+      <h1 className="title">
+        <span>Wargaming</span>
+        <span>MultiSelect</span>
+      </h1>
+      <Separator />
+      {isEditing ? (
+        <MultiSelect onSave={handleSave} onCancel={handleCancel} />
+      ) : (
+        <SelectedItems onEdit={handleEdit} />
+      )}
+    </div>
   );
 };
 

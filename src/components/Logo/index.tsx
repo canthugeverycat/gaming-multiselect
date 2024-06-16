@@ -1,4 +1,4 @@
-import NetworkGif from '../../assets/logo-anim.webp';
+import LogoAnim from '../../assets/logo-anim.webp';
 
 import './index.scss';
 
@@ -15,7 +15,7 @@ type LogoProps = {
 const Logo = ({ href }: LogoProps) => {
   return (
     <a href={href || '#'} className="logo">
-      <img src={NetworkGif} alt="Wargaming Logo" />
+      <img src={LogoAnim} alt="Wargaming Logo" />
     </a>
   );
 };

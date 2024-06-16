@@ -16,7 +16,7 @@ const MultiSelect = ({ onSave, onCancel }: MultiSelectProps) => {
       <List />
 
       {[1, 2, 3].map((i) => (
-        <SelectedItem key={i} />
+        <SelectedItem key={i} id={i} />
       ))}
 
       <Button onClick={onSave}>Save</Button>

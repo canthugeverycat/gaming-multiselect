@@ -1,0 +1,25 @@
+@import '../../styles/globals.scss';
+
+.separator {
+  display: block;
+
+  position: relative;
+
+  background: $light-grey;
+
+  height: 1px;
+
+  &:after {
+    position: absolute;
+    top: -1px;
+
+    transform: rotate(45deg);
+
+    background: $orange;
+
+    width: 4px;
+    height: 4px;
+
+    content: '';
+  }
+}

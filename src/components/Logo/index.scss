@@ -2,9 +2,10 @@
 
 .logo {
   position: absolute;
-  top: 90px;
+  top: 0;
   left: 50%;
-  transform: translateX(-50%) scale(1);
+
+  transform: translate(-50%, -50%) scale(1);
 
   transition: all 0.1s linear;
 
@@ -18,8 +19,8 @@
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
 
-    width: 140px;
-    height: 140px;
+    width: $logo-size;
+    height: $logo-size;
   }
 
   &:before {
@@ -28,25 +29,27 @@
 
     transition: all 0.1s linear;
 
-    outline: 10px solid $jet-black;
-    box-shadow: $box-shadow-orange-glow;
-    border-radius: 50%;
+    outline: calc($logo-size / 15) solid $white;
+    box-shadow: $box-shadow-pink-glow;
 
-    width: 140px;
-    height: 140px;
+    border-radius: 50%;
+    background: $white;
+
+    width: $logo-size;
+    height: $logo-size;
 
     content: '';
   }
 
   &:hover {
-    transform: translateX(-50%) scale(1.02);
+    transform: translate(-50%, -50%) scale(1.05);
 
     &:before {
-      box-shadow: $box-shadow-orange-glow--large;
+      box-shadow: $box-shadow-pink-glow--large;
     }
   }
 
   &:active {
-    transform: translateX(-50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
   }
 }

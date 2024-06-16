@@ -42,59 +42,17 @@
   }
 }
 
-// .button {
-//   opacity: 1;
+.button--link {
+  box-shadow: none;
+  border: none;
 
-//   transition: all 0.1s linear;
-//   cursor: pointer;
-//   border: none;
-//   border-radius: $border-radius-default;
-//   background: linear-gradient(90deg, $baby-blue, $baby-pink);
-//   padding: gutter(4);
-//   width: 100%;
-//   color: $white;
-//   font-weight: 700;
-//   text-transform: uppercase;
+  background: none;
 
-//   &:hover {
-//     opacity: 0.7;
-//     background: linear-gradient(90deg, $baby-pink, $baby-blue);
-//   }
+  padding: 0;
 
-//   &:active {
-//     transform: scale(0.9);
-//   }
-// }
+  @include typography(12px, $orange, 700);
 
-// .button-small {
-//   background: $purple;
-//   padding: initial;
-//   width: 30px;
-//   height: 30px;
-
-//   &:hover {
-//     border: 1px solid $purple;
-//     background: $white;
-//     color: $purple;
-//   }
-// }
-
-// .button-red {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   background: $red;
-
-//   &:hover {
-//     border: 1px solid $red;
-//     background: $white;
-
-//     svg {
-//       fill: $red;
-//     }
-//   }
-// }
-
-// .boxes-container {
-//   padding: gutter(5) gutter(4);
-// }
+  &:hover {
+    transform: scale(1.05);
+  }
+}

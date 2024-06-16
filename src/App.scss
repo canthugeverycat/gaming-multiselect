@@ -2,9 +2,21 @@
 
 .container {
   display: flex;
+  position: relative;
   flex-direction: column;
   box-shadow: $box-shadow-default;
+  border: 2px solid $purple;
   border-radius: $border-radius-default;
-  background: $white;
+  background: $background-default;
+  padding: gutter(6) gutter(4);
   text-align: center;
+
+  .title {
+    display: flex;
+    justify-content: center;
+    gap: 90px;
+    margin-top: 0;
+    margin-bottom: gutter(4);
+    @include typography(32px, $black, 500, 32px, 'Bebas Neue');
+  }
 }

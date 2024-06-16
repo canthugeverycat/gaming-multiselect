@@ -1,5 +1,9 @@
+import { FiEdit3 } from 'react-icons/fi';
+
 import Button from '../Button';
 import SelectedItem from '../SelectedItem';
+
+import './index.scss';
 
 type SelectedItemsProps = {
   onEdit: () => void;
@@ -8,13 +12,17 @@ type SelectedItemsProps = {
 const SelectedItems = ({ onEdit }: SelectedItemsProps) => {
   return (
     <div className="selected-items">
-      <p>You currently have 2 selected items</p>
+      <p className="selected-items-title">You have {3} selected items:</p>
 
-      {[1, 2, 3].map((i) => (
-        <SelectedItem key={i} />
-      ))}
+      <div className="selected-items-container">
+        {[1, 2, 3].map((i) => (
+          <SelectedItem key={i} id={i} />
+        ))}
+      </div>
 
-      <Button onClick={onEdit}>Change my choice</Button>
+      <Button type="link" onClick={onEdit}>
+        <FiEdit3 size={12} /> Change my choice
+      </Button>
     </div>
   );
 };

@@ -1,0 +1,66 @@
+@import '../../styles/globals.scss';
+
+.selected-item {
+  position: relative;
+
+  transition: background-color 0.2s linear;
+
+  border: none;
+  border-radius: $border-radius-large;
+
+  padding: gutter(4) gutter(8) gutter(4) gutter(4);
+
+  overflow: hidden;
+  text-transform: uppercase;
+
+  @include typography(12px, $white, 700);
+
+  &-label {
+    border-right: 2px solid rgba(255, 255, 255, 0.1);
+
+    padding-right: gutter(2);
+  }
+
+  .icon {
+    position: absolute;
+    top: 50%;
+    right: 4px;
+
+    cursor: pointer;
+    margin-top: -14px;
+
+    padding: gutter();
+
+    &:hover {
+      animation: shake 150ms 2 linear;
+    }
+  }
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: -100px;
+
+    animation: shine 10s infinite linear;
+    animation-delay: var(--shine-delay);
+
+    background-image: $shine-gradient;
+
+    width: 100%;
+    height: 100%;
+
+    content: '';
+  }
+
+  &--purple {
+    background: $purple;
+  }
+
+  &--khaki {
+    background: $khaki;
+  }
+
+  &--indigo {
+    background: $indigo;
+  }
+}

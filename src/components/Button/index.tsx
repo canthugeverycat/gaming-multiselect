@@ -1,7 +1,7 @@
 import './index.scss';
 
 type ButtonProps = {
-  type?: 'primary' | 'secondary';
+  type?: 'primary' | 'secondary' | 'link';
   className?: string;
   children: React.ReactNode;
   onClick?: () => void;
