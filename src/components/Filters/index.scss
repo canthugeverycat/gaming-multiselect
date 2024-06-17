@@ -1,0 +1,26 @@
+@import '../../styles/variables.scss';
+
+.filters {
+  position: relative;
+
+  margin: gutter(4);
+
+  .filters-container {
+    display: flex;
+    gap: gutter(4);
+  }
+
+  .icon-filter {
+    fill: $icon-color-inactive;
+
+    cursor: pointer;
+
+    &:hover {
+      fill: $icon-color-active;
+    }
+  }
+
+  .icon-filter--active {
+    fill: $icon-color-active;
+  }
+}

@@ -22,7 +22,7 @@ const App = () => {
 
   return (
     <div className="container">
-      <Logo />
+      <Logo href="https://wargaming.com" />
       <h1 className="title">
         <span>Wargaming</span>
         <span>MultiSelect</span>

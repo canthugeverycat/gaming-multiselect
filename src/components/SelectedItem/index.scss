@@ -1,18 +1,27 @@
-@import '../../styles/globals.scss';
+@import '../../styles/variables.scss';
+@import '../../styles/animations.scss';
+@import '../../styles/mixins.scss';
+
+$icon-size: 20px;
+$icon-size-small: 16px;
 
 .selected-item {
   position: relative;
 
   transition: background-color 0.2s linear;
 
+  cursor: pointer;
+
   border: none;
   border-radius: $border-radius-large;
+
+  background: $tertiary-color;
 
   padding: gutter(4) gutter(8) gutter(4) gutter(4);
 
   overflow: hidden;
-  text-transform: uppercase;
 
+  text-transform: uppercase;
   @include typography(12px, $white, 700);
 
   &-label {
@@ -27,40 +36,50 @@
     right: 4px;
 
     cursor: pointer;
-    margin-top: -14px;
+    margin-top: gutter(-3.5);
 
     padding: gutter();
 
+    width: $icon-size;
+    height: $icon-size;
+
     &:hover {
-      animation: shake 150ms 2 linear;
+      transform: scale(1.1);
     }
   }
 
-  &:before {
-    position: absolute;
-    top: 0;
-    left: -100px;
+  &--animate {
+    &:before {
+      position: absolute;
+      top: 0;
+      left: -100px;
 
-    animation: shine 10s infinite linear;
-    animation-delay: var(--shine-delay);
+      animation: shine 10s infinite linear;
+      animation-delay: var(--shine-delay);
 
-    background-image: $shine-gradient;
+      background-image: $shine-gradient;
 
-    width: 100%;
-    height: 100%;
+      width: 100%;
+      height: 100%;
 
-    content: '';
+      content: '';
+    }
   }
 
-  &--purple {
-    background: $purple;
-  }
+  // Sizes
+  &--small {
+    @include typography(10px, $white, 700);
+    padding: gutter(3) gutter(5) gutter(3) gutter(3);
 
-  &--khaki {
-    background: $khaki;
-  }
+    .selected-item-label {
+      padding-right: gutter();
+    }
 
-  &--indigo {
-    background: $indigo;
+    .icon {
+      right: 0px;
+      margin-top: gutter(-3);
+      width: $icon-size-small;
+      height: $icon-size-small;
+    }
   }
 }

@@ -1,4 +1,6 @@
-@import '../../styles/globals.scss';
+@import '../../styles/variables.scss';
+
+$logo-size: 80px;
 
 .logo {
   position: absolute;
@@ -29,11 +31,11 @@
 
     transition: all 0.1s linear;
 
-    outline: calc($logo-size / 15) solid $white;
-    box-shadow: $box-shadow-pink-glow;
+    outline: calc($logo-size / 15) solid $grey2;
+    box-shadow: $box-shadow-gold-glow;
 
     border-radius: 50%;
-    background: $white;
+    background: $grey2;
 
     width: $logo-size;
     height: $logo-size;
@@ -45,7 +47,7 @@
     transform: translate(-50%, -50%) scale(1.05);
 
     &:before {
-      box-shadow: $box-shadow-pink-glow--large;
+      box-shadow: $box-shadow-gold-glow--large;
     }
   }
 

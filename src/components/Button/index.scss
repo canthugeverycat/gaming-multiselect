@@ -1,58 +1,60 @@
-@import '../../styles/globals.scss';
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+$button-icon-size: 12px;
+$button-text-size: 12px;
+$button-font-family: 'Open Sans';
+$button-text-color: $dark-brown;
+$button-background: linear-gradient(180deg, $gold3 0%, $gold 40%, $gold3 90%);
+$button-background-hover: linear-gradient(
+  180deg,
+  $gold3 0%,
+  lighten($gold, 10%) 30%,
+  $gold3 100%
+);
+$button-min-width: 120px;
 
 .button {
-  position: relative;
-  opacity: 1;
-  transition: all 200ms;
+  display: flex;
+  justify-content: center;
+  gap: gutter();
+
   cursor: pointer;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  border: 1px solid;
-  padding-top: 0.75rem;
-  padding-right: 1.5rem;
-  padding-bottom: 0.75rem;
-  padding-left: 1.5rem;
-  color: $white;
-  font-weight: 700;
-  font-size: 0.85rem;
+
+  // Adds depth to the button with an inset shadow around the perimeter
+  box-shadow:
+    inset 15px 0 20px lighten($secondary-color, 10%),
+    inset -15px 0 20px lighten($secondary-color, 10%);
+
+  // Dynamic gradient border
+  border: 6px solid;
+  border-image-source: radial-gradient($grey, $grey2);
+  border-image-slice: 1;
+
+  background: $button-background;
+
+  padding: gutter(3) gutter(5);
+
+  min-width: $button-min-width;
+
+  text-align: center;
+  text-shadow: $text-shadow-default;
   text-transform: uppercase;
 
-  &:hover {
-    opacity: 0.8;
+  @include typography(
+    $button-text-size,
+    $button-text-color,
+    700,
+    $button-text-size,
+    $button-font-family
+  );
+
+  svg {
+    width: $button-icon-size;
+    height: $button-icon-size;
   }
-}
-
-.button--primary {
-  border-color: $dark-orange;
-  background: linear-gradient(90deg, $dark-orange, $orange);
 
   &:hover {
-    background: linear-gradient(90deg, $orange, $gold, $orange);
-  }
-}
-
-.button--secondary {
-  border-color: $jet-black;
-  background: linear-gradient(90deg, $black, $jet-black);
-  color: $beige;
-
-  &:hover {
-    border-color: $jet-black;
-    background: linear-gradient(90deg, $black, $beige, $black);
-    color: $jet-black;
-  }
-}
-
-.button--link {
-  box-shadow: none;
-  border: none;
-
-  background: none;
-
-  padding: 0;
-
-  @include typography(12px, $orange, 700);
-
-  &:hover {
-    transform: scale(1.05);
+    background: $button-background-hover;
   }
 }

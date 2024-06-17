@@ -1,22 +1,32 @@
-@import './styles/globals.scss';
+@import './styles/variables.scss';
+@import './styles/mixins.scss';
 
 .container {
   display: flex;
   position: relative;
   flex-direction: column;
-  box-shadow: $box-shadow-default;
-  border: 2px solid $purple;
-  border-radius: $border-radius-default;
-  background: $background-default;
-  padding: gutter(6) gutter(4);
+
+  z-index: 1;
+
+  border: 6px solid $grey2;
+
+  background: url('./assets/tile.jpeg');
+  background-size: 200px;
+  background-repeat: repeat;
+
+  padding: gutter(4) gutter(4);
+
+  user-select: none;
+
   text-align: center;
 
   .title {
     display: flex;
     justify-content: center;
-    gap: 90px;
-    margin-top: 0;
-    margin-bottom: gutter(4);
+    gap: 110px;
+
+    margin: 0;
+
     @include typography(32px, $black, 500, 32px, 'Bebas Neue');
   }
 }

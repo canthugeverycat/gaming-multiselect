@@ -1,7 +1,7 @@
 @import '../../styles/variables.scss';
 @import '../../styles/mixins.scss';
 
-.selected-items {
+.multiselect {
   margin-bottom: gutter(4);
 
   box-shadow:
@@ -10,22 +10,25 @@
 
   background: rgba(0, 0, 0, 0.8);
 
-  padding: gutter(4);
-
-  &-title {
-    @include typography(14px, $text-color, 600, 24px);
-  }
-
-  &-container {
+  &-selected {
     display: flex;
     flex-direction: row;
     justify-content: center;
     gap: gutter(2);
 
-    margin-bottom: gutter(2);
+    margin: gutter(4) auto;
+  }
+
+  &-selected-title {
+    @include typography(14px, $text-color, 600, 24px);
   }
 }
 
-.button-edit {
-  align-self: center;
+.multiselect-actions {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: gutter(2);
+
+  width: 100%;
 }

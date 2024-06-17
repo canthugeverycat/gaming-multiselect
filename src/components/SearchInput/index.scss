@@ -1,0 +1,48 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.search-input {
+  display: flex;
+
+  position: relative;
+
+  flex: 1;
+
+  input {
+    border: none;
+
+    background: $jet-black;
+
+    padding: gutter() gutter(2) gutter() gutter(8);
+
+    width: 100%;
+
+    caret-color: $tertiary-color;
+
+    @include typography(12px, $gold, 500, 12px, 'Open Sans');
+
+    &:focus {
+      outline: none;
+
+      & + .icon {
+        fill: $primary-color;
+      }
+    }
+
+    &::placeholder {
+      color: $text-color;
+    }
+  }
+
+  &:hover .icon {
+    fill: $primary-color;
+  }
+
+  .icon {
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    transform: translateY(-50%);
+    fill: $secondary-color;
+  }
+}

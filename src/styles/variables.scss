@@ -1,0 +1,64 @@
+/**
+ * Colors
+ */
+$black: rgb(20, 20, 20);
+$jet-black: black;
+$white: #fff;
+$grey: #747474;
+$grey2: #2b2e2e;
+
+$yellow: #ffcf40;
+$orange: #f59c4d;
+$gold: #d2c5a3;
+$gold2: #583b1a;
+$gold3: #9d763f;
+
+$red: #862b1d;
+$dark-brown: #3a2718;
+
+/**
+ * Theme
+ */
+$primary-color: $gold;
+$secondary-color: $gold2;
+$tertiary-color: $red;
+$text-color: $grey;
+$background-body: linear-gradient(45deg, $jet-black, $black);
+$icon-color-inactive: $secondary-color;
+$icon-color-active: $primary-color;
+
+/**
+ * Borders
+ */
+$border-radius-default: 4px;
+$border-radius-large: 8px;
+
+/**
+ * Effects
+ */
+$text-shadow-default: 1px 1px 2px rgba(0, 0, 0, 0.2);
+$box-shadow-gold-glow:
+  0 0 7.5px 3.75px $white,
+  0 0 12.5px 7.5px $orange,
+  0 0 17.5px 11.25px $yellow;
+$box-shadow-gold-glow--small:
+  0 0 3.25px 2px $white,
+  0 0 6.25px 3.75px $orange,
+  0 0 8.75px 5px $yellow;
+$box-shadow-gold-glow--large:
+  0 0 15px 7.5px $white,
+  0 0 25px 15px $orange,
+  0 0 35px 22.5px $yellow;
+
+$shine-gradient: linear-gradient(
+  120deg,
+  rgba(255, 255, 255, 0) 30%,
+  rgba(255, 255, 255, 0.8),
+  rgba(255, 255, 255, 0) 70%
+);
+
+// Helper function to calculate the gutter
+$gutter-base: 4px;
+@function gutter($n: 1) {
+  @return $n * $gutter-base;
+}

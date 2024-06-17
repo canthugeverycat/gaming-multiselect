@@ -1,4 +1,4 @@
-import LogoAnim from '../../assets/logo-anim.webp';
+import Anim from '../../assets/anim.webp';
 
 import './index.scss';
 
@@ -14,8 +14,8 @@ type LogoProps = {
  */
 const Logo = ({ href }: LogoProps) => {
   return (
-    <a href={href || '#'} className="logo">
-      <img src={LogoAnim} alt="Wargaming Logo" />
+    <a href={href || '#'} className="logo" target="_blank" rel="noreferrer">
+      <img src={Anim} alt="Wargaming Logo" />
     </a>
   );
 };
