@@ -1,6 +1,8 @@
 @import '../../styles/variables.scss';
 @import '../../styles/mixins.scss';
 
+$container-width: 430px;
+
 .selected-items {
   margin-bottom: gutter(4);
 
@@ -11,6 +13,8 @@
   background: rgba(0, 0, 0, 0.8);
 
   padding: gutter(4);
+
+  width: $container-width;
 
   &-title {
     @include typography(14px, $text-color, 600, 24px);

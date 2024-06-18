@@ -1,45 +1,21 @@
 @import '../../styles/variables.scss';
-@import '../../styles/mixins.scss';
 
-$checkbox-size: 14px;
+$list-width: 310px;
+$list-height: 230px;
 
 .list {
   cursor: pointer;
 
   margin: 0;
+  margin-right: gutter(2);
   padding: 0 gutter(4);
+
+  width: $list-width;
+  height: $list-height;
+
+  overflow: scroll;
 
   list-style: none;
 
   text-align: left;
-
-  .list-item {
-    @include typography(15px, $primary-color, 600, 15px);
-
-    display: flex;
-    align-items: center;
-
-    margin-bottom: gutter(2);
-
-    &:hover {
-      color: $tertiary-color;
-    }
-
-    &:active {
-      color: $primary-color;
-    }
-  }
-
-  .list-item-checkbox {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-
-    margin-right: gutter(2);
-
-    background: $icon-color-inactive;
-
-    width: $checkbox-size;
-    height: $checkbox-size;
-  }
 }

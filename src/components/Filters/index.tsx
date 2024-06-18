@@ -13,6 +13,9 @@ import SearchInput from '../SearchInput';
 const Filters = () => {
   const [showSlider, setShowSlider] = useState(false);
 
+  /**
+   * Show/hide the range slider
+   */
   const handleToggleSlider = () => {
     setShowSlider((prev) => !prev);
   };
@@ -30,7 +33,7 @@ const Filters = () => {
         />
       </div>
 
-      {showSlider && <MultiRangeSlider min={0} max={100} />}
+      {showSlider && <MultiRangeSlider />}
     </div>
   );
 };

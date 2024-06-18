@@ -1,39 +1,37 @@
+import { observer } from 'mobx-react-lite';
+
 import './index.scss';
 
 import Slider from 'rc-slider';
 
 import 'rc-slider/assets/index.css';
 
-type MultiRangeSliderProps = {
-  min: number;
-  max: number;
-  step?: number;
-};
+import { useStore } from '../../hooks/use-store';
 
 /**
- * A slider that allows min and max range
- * @param {MultiRangeSliderProps} props
- *
- * @param {number} props.min Minimum value
- * @param {number} props.max Maximum value
- * @param {number} props.step Step increment
+ * A slider that allows for min and max range
  */
-const MultiRangeSlider = ({ min, max, step = 1 }: MultiRangeSliderProps) => {
+const MultiRangeSlider = () => {
+  const { elementsStore } = useStore();
+
   return (
     <div className="multi-range">
-      <span className="multi-range-value">{0}</span>
+      <span className="multi-range-value">{elementsStore.filter[0]}</span>
       <Slider
         className="multi-range-input"
         range
-        min={min}
-        max={max}
-        defaultValue={[20, 70]}
+        min={0}
+        max={elementsStore.elements.length}
+        defaultValue={elementsStore.filter}
         allowCross={false}
-        step={step}
+        step={1}
+        onChangeComplete={(value: any) => {
+          elementsStore.setFilter(value);
+        }}
       />
-      <span className="multi-range-value">{100}</span>
+      <span className="multi-range-value">{elementsStore.filter[1]}</span>
     </div>
   );
 };
 
-export default MultiRangeSlider;
+export default observer(MultiRangeSlider);

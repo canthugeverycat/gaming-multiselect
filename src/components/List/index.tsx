@@ -1,18 +1,33 @@
-import { GiCheckMark } from 'react-icons/gi';
+import { observer } from 'mobx-react-lite';
+import { List as VirtualizedList } from 'react-virtualized';
+
+import {
+  LIST_ELEMENT_HEIGHT,
+  LIST_HEIGHT,
+  LIST_WIDTH,
+} from '../../globals/const';
+import { useStore } from '../../hooks/use-store';
+import ListItem from './ListItem';
 
 import './index.scss';
 
-const List = () => (
-  <ul className="list">
-    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
-      <li key={item} className="list-item">
-        <span className="list-item-checkbox">
-          {item % 2 === 0 && <GiCheckMark className="icon" />}
-        </span>
-        Element {item}
-      </li>
-    ))}
-  </ul>
-);
+/**
+ * A container that smart renders a list of elements
+ */
+const List = () => {
+  const { elementsStore } = useStore();
 
-export default List;
+  return (
+    <VirtualizedList
+      className="list"
+      height={LIST_HEIGHT}
+      width={LIST_WIDTH}
+      rowRenderer={({ key, ...props }) => <ListItem key={key} {...props} />}
+      rowHeight={LIST_ELEMENT_HEIGHT}
+      rowCount={elementsStore.filtered.length}
+      overscanRowCount={10}
+    />
+  );
+};
+
+export default observer(List);

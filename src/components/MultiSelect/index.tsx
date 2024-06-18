@@ -1,5 +1,7 @@
+import { observer } from 'mobx-react-lite';
 import { MdClose, MdOutlineCheck } from 'react-icons/md';
 
+import { useStore } from '../../hooks/use-store';
 import Button from '../Button';
 import Filters from '../Filters';
 import List from '../List';
@@ -21,6 +23,17 @@ type MultiSelectProps = {
  * @param {Function} props.onCancel Callback that fires on Cancel action
  */
 const MultiSelect = ({ onSave, onCancel }: MultiSelectProps) => {
+  const { elementsStore } = useStore();
+
+  /**
+   * Removes an element from selection
+   *
+   * @param {string} element The element to remove
+   */
+  const handleRemoveSelectedItem = (element: string) => {
+    elementsStore.toggleElement(element);
+  };
+
   return (
     <>
       <div className="multiselect">
@@ -31,9 +44,21 @@ const MultiSelect = ({ onSave, onCancel }: MultiSelectProps) => {
         {/* Selected Items */}
         <p className="multiselect-selected-title">Selected items:</p>
         <div className="multiselect-selected">
-          {[1, 2, 3].map((i) => (
-            <SelectedItem key={i} id={i} size="small" />
+          {elementsStore.selected.map((title, i) => (
+            <SelectedItem
+              key={i}
+              {...{ title }}
+              size="small"
+              onRemove={handleRemoveSelectedItem}
+            />
           ))}
+
+          {/* No selected message */}
+          {!elementsStore.selected.length && (
+            <p className="multiselect-selected-label">
+              Select some items from the list.
+            </p>
+          )}
         </div>
       </div>
 
@@ -50,4 +75,4 @@ const MultiSelect = ({ onSave, onCancel }: MultiSelectProps) => {
   );
 };
 
-export default MultiSelect;
+export default observer(MultiSelect);

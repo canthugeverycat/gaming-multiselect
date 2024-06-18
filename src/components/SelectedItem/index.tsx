@@ -2,12 +2,11 @@ import './index.scss';
 
 import { IoMdClose } from 'react-icons/io';
 
-import { CustomCSSProperties } from '../../globals/types';
-
 type SelectedItemProps = {
-  id: number;
+  title: string;
   size?: 'small' | 'medium';
   animate?: boolean;
+  onRemove: (element: string) => void;
 };
 
 /**
@@ -15,26 +14,23 @@ type SelectedItemProps = {
  *
  * @param {SelectedItemProps} props
  *
- * @param {number} props.id
+ * @param {string} props.title The element itself
  * @param {'small' | 'medium'} props.size Size of the element
  * @param {boolean} props.animate If it should animate a glossover
  */
-const SelectedItem = ({ id, size = 'medium', animate }: SelectedItemProps) => {
-  // Tweaks the gloss animation to be continuous
-  const style: CustomCSSProperties = {
-    '--shine-delay': `${id * 0.4}s`,
-  };
-
+const SelectedItem = ({
+  title,
+  size = 'medium',
+  animate,
+  onRemove,
+}: SelectedItemProps) => {
   const animateClass = animate ? 'selected-item--animate' : '';
 
   return (
-    <button
-      className={`selected-item selected-item--${size} ${animateClass}`}
-      {...{ style }}
-    >
-      <span className="selected-item-label">Element {id}</span>
+    <button className={`selected-item selected-item--${size} ${animateClass}`}>
+      <span className="selected-item-label">{title}</span>
 
-      <IoMdClose className="icon" />
+      <IoMdClose className="icon" onClick={() => onRemove(title)} />
     </button>
   );
 };

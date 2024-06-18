@@ -55,7 +55,6 @@ $icon-size-small: 16px;
       left: -100px;
 
       animation: shine 10s infinite linear;
-      animation-delay: var(--shine-delay);
 
       background-image: $shine-gradient;
 
@@ -63,6 +62,13 @@ $icon-size-small: 16px;
       height: 100%;
 
       content: '';
+    }
+  }
+
+  // Make the animation run smoothly accross elements
+  @for $i from 1 through 3 {
+    &:nth-child(#{$i}):before {
+      animation-delay: #{($i) * 0.4}s;
     }
   }
 

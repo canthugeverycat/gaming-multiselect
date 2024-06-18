@@ -7,6 +7,7 @@ import { useState } from 'react';
 
 import Logo from './components/Logo';
 import Separator from './components/Separator';
+import { useStore } from './hooks/use-store';
 
 /**
  * Main skeleton of the app
@@ -14,11 +15,23 @@ import Separator from './components/Separator';
 const App = () => {
   const [isEditing, setIsEditing] = useState(false);
 
-  const handleCancel = () => setIsEditing(false);
+  const { elementsStore } = useStore();
 
-  const handleSave = () => setIsEditing(false);
+  const handleCancel = () => {
+    elementsStore.cancelSelection();
+    setIsEditing(false);
+  };
 
-  const handleEdit = () => setIsEditing(true);
+  const handleSave = () => {
+    elementsStore.saveSelection();
+    setIsEditing(false);
+  };
+
+  const handleEdit = () => {
+    elementsStore.cancelSelection();
+    elementsStore.resetFilters();
+    setIsEditing(true);
+  };
 
   return (
     <div className="container">
