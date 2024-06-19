@@ -43,7 +43,10 @@ const MultiSelect = ({ onSave, onCancel }: MultiSelectProps) => {
 
         {/* Selected Items */}
         <p className="multiselect-selected-title">Selected items:</p>
-        <div className="multiselect-selected">
+        <div
+          className="multiselect-selected"
+          data-testid="multiselect-selected"
+        >
           {elementsStore.selected.map((title, i) => (
             <SelectedItem
               key={i}

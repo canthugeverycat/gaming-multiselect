@@ -22,7 +22,7 @@ const SearchInput = () => {
   };
 
   return (
-    <div className="search-input">
+    <div className="search-input" data-testid="search-input">
       <input
         type="text"
         placeholder="Search for an item"

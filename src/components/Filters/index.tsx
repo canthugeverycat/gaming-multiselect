@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { MdFilterListAlt } from 'react-icons/md';
 
-import MultiRangeSlider from '../MultiRangeSlider';
+import MultiRange from '../MultiRange';
 
 import './index.scss';
 
@@ -27,13 +27,14 @@ const Filters = () => {
       <div className="filters-container">
         <SearchInput />
         <MdFilterListAlt
+          data-testid="filters-multirange-icon"
           className={`icon-filter ${iconFilterClass}`}
           size={24}
           onClick={handleToggleSlider}
         />
       </div>
 
-      {showSlider && <MultiRangeSlider />}
+      {showSlider && <MultiRange />}
     </div>
   );
 };

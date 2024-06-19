@@ -11,13 +11,14 @@ import { useStore } from '../../hooks/use-store';
 /**
  * A slider that allows for min and max range
  */
-const MultiRangeSlider = () => {
+const MultiRange = () => {
   const { elementsStore } = useStore();
 
   return (
-    <div className="multi-range">
+    <div className="multi-range" data-testid="multi-range">
       <span className="multi-range-value">{elementsStore.filter[0]}</span>
       <Slider
+        data-testid="multi-range-input"
         className="multi-range-input"
         range
         min={0}
@@ -34,4 +35,4 @@ const MultiRangeSlider = () => {
   );
 };
 
-export default observer(MultiRangeSlider);
+export default observer(MultiRange);

@@ -2,7 +2,7 @@ import './index.scss';
 
 import { IoMdClose } from 'react-icons/io';
 
-type SelectedItemProps = {
+export type SelectedItemProps = {
   title: string;
   size?: 'small' | 'medium';
   animate?: boolean;
@@ -27,10 +27,17 @@ const SelectedItem = ({
   const animateClass = animate ? 'selected-item--animate' : '';
 
   return (
-    <button className={`selected-item selected-item--${size} ${animateClass}`}>
+    <button
+      aria-label="Selected Item"
+      className={`selected-item selected-item--${size} ${animateClass}`}
+    >
       <span className="selected-item-label">{title}</span>
 
-      <IoMdClose className="icon" onClick={() => onRemove(title)} />
+      <IoMdClose
+        className="icon"
+        data-testid="selected-item-icon--remove"
+        onClick={() => onRemove(title)}
+      />
     </button>
   );
 };

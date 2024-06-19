@@ -7,7 +7,7 @@ $logo-size: 80px;
   top: 0;
   left: 50%;
 
-  transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%);
 
   transition: all 0.1s linear;
 
@@ -44,14 +44,10 @@ $logo-size: 80px;
   }
 
   &:hover {
-    transform: translate(-50%, -50%) scale(1.05);
+    transform: translate(-50%, -50%);
 
     &:before {
       box-shadow: $box-shadow-gold-glow--large;
     }
-  }
-
-  &:active {
-    transform: translate(-50%, -50%) scale(1);
   }
 }

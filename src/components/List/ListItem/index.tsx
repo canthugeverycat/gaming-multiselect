@@ -39,7 +39,7 @@ const ListItem = ({ index, style }: ListRowProps) => {
     >
       <span className="list-item-checkbox">
         {elementsStore.selected.includes(element) && (
-          <GiCheckMark className="icon" />
+          <GiCheckMark data-testid="list-item-icon--checked" className="icon" />
         )}
       </span>
       {element}
