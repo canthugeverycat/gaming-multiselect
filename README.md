@@ -43,6 +43,11 @@ To install the required dependencies for the project. Once installed run:
 This will start both the app and the express server in development mode.  
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+#### `npm test`
+
+After running this command press `a` to run all tests for the app.
+
+
 ## 📜 Project Overview
 
 ## 🧱 Structure & organization
