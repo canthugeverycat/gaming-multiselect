@@ -16,6 +16,7 @@ describe('ElementsStore filters', () => {
   it('filters elements correctly based on searchValue', () => {
     // Search for existing elements
     elementsStore.setSearch('Element 1');
+    elementsStore.setFilter([0, 10]);
     expect(elementsStore.filtered).toEqual(['Element 1', 'Element 10']);
 
     // Search for non existing string
