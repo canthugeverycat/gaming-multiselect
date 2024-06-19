@@ -1,12 +1,14 @@
-import { createElements } from '../mock/elements';
 import { ElementsStore } from './elements';
+
+const mockElements = (length: number) =>
+  Array.from({ length }, (_, i) => `Element ${i + 1}`);
 
 describe('ElementsStore filters', () => {
   let elementsStore: ElementsStore;
 
   beforeEach(() => {
     elementsStore = new ElementsStore();
-    elementsStore.elements = createElements(10);
+    elementsStore.elements = mockElements(10);
     elementsStore.selected = [];
     elementsStore.savedSelected = [];
   });
@@ -51,7 +53,7 @@ describe('ElementsStore selection', () => {
 
   beforeEach(() => {
     elementsStore = new ElementsStore();
-    elementsStore.elements = createElements(10);
+    elementsStore.elements = mockElements(10);
     elementsStore.selected = [];
     elementsStore.savedSelected = [];
   });

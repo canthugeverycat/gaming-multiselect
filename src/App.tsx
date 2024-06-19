@@ -3,7 +3,7 @@ import SelectedItems from './components/SelectedItems';
 
 import './App.scss';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Logo from './components/Logo';
 import Separator from './components/Separator';
@@ -14,7 +14,6 @@ import { useStore } from './hooks/use-store';
  */
 const App = () => {
   const [isEditing, setIsEditing] = useState(false);
-
   const { elementsStore } = useStore();
 
   const handleCancel = () => {
@@ -32,6 +31,10 @@ const App = () => {
     elementsStore.resetFilters();
     setIsEditing(true);
   };
+
+  useEffect(() => {
+    elementsStore.getData();
+  }, []);
 
   return (
     <div className="container">

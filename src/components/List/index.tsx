@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite';
-import { List as VirtualizedList } from 'react-virtualized';
+import { ListRowRenderer, List as VirtualizedList } from 'react-virtualized';
 
 import {
   LIST_ELEMENT_HEIGHT,
@@ -17,12 +17,16 @@ import './index.scss';
 const List = () => {
   const { elementsStore } = useStore();
 
+  const rowRenderer: ListRowRenderer = ({ key, ...props }) => (
+    <ListItem key={key} {...props} />
+  );
+
   return (
     <VirtualizedList
       className="list"
       height={LIST_HEIGHT}
       width={LIST_WIDTH}
-      rowRenderer={({ key, ...props }) => <ListItem key={key} {...props} />}
+      rowRenderer={rowRenderer}
       rowHeight={LIST_ELEMENT_HEIGHT}
       rowCount={elementsStore.filtered.length}
       overscanRowCount={10}

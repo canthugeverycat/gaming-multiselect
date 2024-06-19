@@ -8,9 +8,9 @@
     "@testing-library/react": "^16.0.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.97",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "cors": "^2.8.5",
     "mobx": "^6.12.4",
     "mobx-react-lite": "^4.0.7",
     "rc-slider": "^10.6.2",
@@ -24,9 +24,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node ./src/mocks/server.js & react-scripts start",
     "build": "react-scripts build",
-    "server": "node ./server/index.js",
+    "server": "node ./src/mocks/server.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

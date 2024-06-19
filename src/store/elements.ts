@@ -1,13 +1,14 @@
-import { makeAutoObservable } from 'mobx';
+import { action, makeAutoObservable } from 'mobx';
 
-import { createElements } from '../mock/elements';
+import { fetchElements } from '../globals/http';
 
 /**
  * A store for the Elements entity
  */
 export class ElementsStore {
-  elements: string[] = createElements(300); // Data
-  savedSelected: string[] = ['Element 2', 'Element 3', 'Element 7']; // Saved selection
+  isFetching: boolean = false;
+  elements: string[] = []; // Data
+  savedSelected: string[] = []; // Saved selection
   selected: string[] = [...this.savedSelected]; // Temporary selection
   searchValue: string = '';
   filter: [number, number] = [0, this.elements.length];
@@ -19,9 +20,18 @@ export class ElementsStore {
   // Elements with applied filters
   get filtered(): string[] {
     return this.elements
-      .filter((element) => element.includes(this.searchValue))
       .filter((element) => {
-        const number = parseInt(element.split(' ')[1], 10);
+        // Split the search into separate words and match them
+        const searchSections = this.searchValue.toLowerCase().split(' ');
+
+        // This allows for smarter search queries
+        // (e.g. 'ele 1', '43 elem', etc)
+        return searchSections.every((section) =>
+          element.toLowerCase().includes(section)
+        );
+      })
+      .filter((_, i) => {
+        const number = i + 1;
         const [min, max] = this.filter;
 
         return number >= min && number <= max;
@@ -31,6 +41,22 @@ export class ElementsStore {
   // Checks if a maximum of selected elements was reached
   get isMaxSelected() {
     return this.selected.length >= 3;
+  }
+
+  /**
+   * Fetches elements from the API
+   */
+  getData() {
+    this.isFetching = true;
+
+    fetchElements()
+      .then(
+        action((data) => {
+          this.elements = data;
+          this.filter = [0, data.length];
+        })
+      )
+      .finally(action(() => (this.isFetching = false)));
   }
 
   /**
