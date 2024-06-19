@@ -4,27 +4,27 @@
 
 ## Table of Contents
 
-- [✏️ Project Description](#✏️-project-description)
-- [💻 Development Environment](#💻-development-environment)
-- [📄 Available Scripts](#📄-available-scripts)
-- [📜 Project Overview](#📜-project-overview)
-  - [🧱 Structure & organization](#🧱-main-structure--organization)
-  - [🌠 Assets](#🌠-assets)
-  - [🌍 Globals](#🌍-globals)
-  - [🪝 Hooks](#🪝-hooks)
-  - [🧊 Components](#🧊-components)
-  - [🎨 Styles](#🎨-styles)
-    - [🎠 Theming](#🎠-theming)
-  - [📦 Store](#📦-store)
-    - [🏡 Properties](#🏡-properties)
-    - [⚙️ Methods](#⚙️-methods)
-  - [🃏 Mocks](#🃏-mocks)
+- [✏️ Project Description](#project-description)
+- [💻 Development Environment](#development-environment)
+- [📄 Available Scripts](#available-scripts)
+- [📜 Project Overview](#project-overview)
+- [Structure & organization](#structure-organization)
+  - [Assets](#assets)
+  - [Globals](#globals)
+  - [Hooks](#hooks)
+  - [Components](#components)
+  - [Styles](#styles)
+    - [Theming](#theming)
+  - [Store](#store)
+    - [Properties](#properties)
+    - [Methods](#methods)
+  - [Mocks](#mocks)
 
-## ✏️ Project Description
+## [✏️ Project Description](#project-description)
 
 This technical challenge involves implementing a widget that allows for selection of up to 3 elements. It features search and range filters as well.
 
-## 💻 Development Environment
+## [💻 Development Environment](#development-environment)
 
 This project was developed with the following environment:
 
@@ -32,7 +32,7 @@ This project was developed with the following environment:
 - **npm** v10.5.0
 - **Create React App** v5.0.1
 
-## 📄 Available Scripts
+## [📄 Available Scripts](#available-scripts)
 
 To start the app run:
 
@@ -41,9 +41,9 @@ To start the app run:
 This will start both the app and the express server in development mode.  
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## 📜 Project Overview
+## [📜 Project Overview](#project-overview)
 
-## 🧱 Structure & organization
+## [🧱 Structure & organization](#structure-organization)
 
 - `assets`
   - [file].(svg|webp|jpeg|ttf)
@@ -67,11 +67,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
   - [entity].test.ts
   - stores.ts
 
-## 🌠 Assets
+## [🌠 Assets](#assets)
 
 A folder containing visual assets for the app. This is usually a home to **fonts** and **images**.
 
-## 🌍 Globals
+## [🌍 Globals](#globals)
 
 Houses .ts files which are used globally thoughout the app. Currently we have:
 
@@ -82,11 +82,11 @@ All the constants are placed in **const.ts** and used from here. This enables ea
 
 HTTP functions are also defined in **http.ts**.
 
-## 🪝 Hooks
+## [🪝 Hooks](#hooks)
 
 Custom hooks used throughout the app.
 
-## 🧊 Components
+## [🧊 Components](#components)
 
 This folder houses the components as the building blocks of the app.
 
@@ -96,7 +96,7 @@ Each component has:
 - `index.scss` - Local styles
 - `index.test.tsx` - Unit tests
 
-## 🎨 Styles
+## [🎨 Styles](#styles)
 
 Holds base global styles for the app. The files are split as following:
 
@@ -104,7 +104,7 @@ Holds base global styles for the app. The files are split as following:
 - `mixins`.scss - _contains utility mixins_
 - `variables`.scss _all the global scss variables are stored here_
 
-### 🎠 Theming
+### [🎠 Theming](#theming)
 
 Each component has its' own _.scss_ file. At the very top, variables local to the component are defined which allows for easy changes without going through the entire code. For example:
 
@@ -129,11 +129,11 @@ _Example of green/purple theme_
 <img src="https://i.ibb.co/nk0hLMp/Screenshot-2024-06-19-at-20-27-15.png" width="370px" />
 <img src="https://i.ibb.co/qMXygxh/Screenshot-2024-06-19-at-20-26-42.png" width="500px" />
 
-## 📦 Store
+## [📦 Store](#store)
 
 A **MobX** store is used to persist the data to the app.
 
-### 🏡 Properties:
+### [🏡 Properties:](#properties)
 
 `isFetching` **bool** Default: _false_
 
@@ -181,7 +181,7 @@ _get_ `isMaxSelected` **bool** Default: _false_
 
 Checks whether a maximum allowed number of elements (3) has been selected.
 
-### ⚙️ Methods
+### [⚙️ Methods](#methods)
 
 `getData`
 
@@ -252,6 +252,6 @@ Params:
 
 Cancels temporary selection.
 
-## 🃏 Mocks
+## [🃏 Mocks](#mocks)
 
 Contains a simple **Express** server that exposes an API to fetch the data.
