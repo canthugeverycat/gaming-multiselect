@@ -30,8 +30,8 @@ export class ElementsStore {
           element.toLowerCase().includes(section)
         );
       })
-      .filter((_, i) => {
-        const number = i + 1;
+      .filter((element) => {
+        const number = parseInt(element.split(' ')[1], 10);
         const [min, max] = this.filter;
 
         return number >= min && number <= max;
