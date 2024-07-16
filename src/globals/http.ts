@@ -5,14 +5,10 @@ import { API_BASE_URL } from './const';
  * @return  {string[]}  List of elements
  */
 export const fetchElements = async (): Promise<string[]> => {
-  try {
-    const res = await fetch(`${API_BASE_URL}/elements`);
-
-    const data: string[] = await res.json();
-
-    return data;
-  } catch (e) {
-    const message = e instanceof Error ? e.message : 'An error has occured!';
-    throw new Error(message);
-  }
+  return new Promise<string[]>((resolve) => {
+    setTimeout(() => {
+      const elements = Array.from({ length: 300 }, (_, i) => `Element ${i + 1}`);
+      resolve(elements);
+    }, 300);
+  });
 };

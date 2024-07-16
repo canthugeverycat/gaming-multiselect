@@ -1,6 +1,4 @@
-<img src="./src/assets/logo.svg" alt="Wargaming Logo" width="100" height="100" />
-
-# Wargaming 𝕏 Dejan Skorupan
+# Gaming UI MultiSelect
 
 - [✏️ Project Description](#-project-description)
 - [💻 Development Environment](#-development-environment)
@@ -20,7 +18,7 @@
 
 ## ✏️ Project Description
 
-This technical challenge involves implementing a widget that allows for selection of up to 3 elements. It features search and range filters as well.
+This app showcases a multiselect widget that can be used for a gaming user interface. The widget allows for selection of up to N (3) elements. It features search and range filters. The list performs well when introduced to a large number of elements.
 
 ## 💻 Development Environment
 
@@ -46,7 +44,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 #### `npm test`
 
 After running this command press `a` to run all tests for the app.
-
 
 ## 📜 Project Overview
 

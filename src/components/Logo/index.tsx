@@ -14,8 +14,8 @@ type LogoProps = {
  */
 const Logo = ({ href }: LogoProps) => {
   return (
-    <a href={href || '#'} className="logo" target="_blank" rel="noreferrer">
-      <img src={Anim} alt="Wargaming Logo" />
+    <a href={href || '#'} className="logo" rel="noreferrer">
+      <img src={Anim} alt="Logo" />
     </a>
   );
 };

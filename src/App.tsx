@@ -38,9 +38,9 @@ const App = () => {
 
   return (
     <div className="container">
-      <Logo href="https://wargaming.com" />
+      <Logo />
       <h1 className="title">
-        <span>Wargaming</span>
+        <span>WarGaming</span>
         <span>MultiSelect</span>
       </h1>
       <Separator />

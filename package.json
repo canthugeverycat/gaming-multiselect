@@ -23,7 +23,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "node ./src/mocks/server.js & react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "server": "node ./src/mocks/server.js",
     "test": "react-scripts test",
@@ -53,5 +53,8 @@
     "postcss": "^8.4.38",
     "prettier": "^3.3.0",
     "prettier-plugin-css-order": "^2.1.2"
+  },
+  "engines": {
+    "node": "21.7.3"
   }
 }

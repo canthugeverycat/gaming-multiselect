@@ -13,7 +13,10 @@ $list-height: 230px;
   width: $list-width;
   height: $list-height;
 
-  overflow: scroll;
+  overflow: auto;
+
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+  scrollbar-width: thin;
 
   list-style: none;
 
