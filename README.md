@@ -1,4 +1,4 @@
-# Gaming UI MultiSelect
+# Gaming MultiSelect
 
 - [✏️ Project Description](#-project-description)
 - [💻 Development Environment](#-development-environment)
