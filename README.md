@@ -1,6 +1,4 @@
-<img src="./src/assets/logo.svg" alt="Wargaming Logo" width="100" height="100" />
-
-# Wargaming 𝕏 Dejan Skorupan
+# Gaming Multiselect
 
 [🟢 Live Demo](https://gaming-ui-multiselect-6e45190eb83d.herokuapp.com)
 
