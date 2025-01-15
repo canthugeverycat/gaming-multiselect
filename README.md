@@ -1,6 +1,6 @@
 # Gaming Multiselect
 
-[🟢 Live Demo](https://vjrn9w-3000.csb.app)
+[🟢 Live Demo](https://gaming-multiselect-75ccb2ee191e.herokuapp.com)
 
 - [✏️ Project Description](#-project-description)
 - [💻 Development Environment](#-development-environment)
